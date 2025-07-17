@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center;padding: 1rem; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./main.js"></script>
+</head>
+<body>
+  <header>
+    <picture>
+      <img src="./images/logo.svg" alt="">
+    </picture>
+  </header>
+  <main class="container">
+    <section class="tip-calculator">
+      <form action="/" id="bill-form">
+        <label for="bill-input">Bill</label>
+        <div tabindex="0">
+          <img src="./images/icon-dollar.svg" alt="">
+        <input type="text" placeholder="0" id="bill-input" name="bill-input" >
+        </div>
+        <span class="error-message" id="error-bill"></span>
+      </form>
+      <span>Select Tip %</span>
+      <section class="tips flex-container">
+        <button type="button" class="tip flex-item">5%</button>
+        <button type="button" class="tip flex-item">10%</button>
+        <button type="button" class="tip flex-item">15%</button>
+        <button type="button" class="tip flex-item">25%</button>
+        <button type="button" class="tip flex-item">50%</button>
+        <input type="text" class="flex-item custom-tip" placeholder="Custom" name="custom-tip">
+      </section>
+      <form action="/" id="people-number-from">
+        <label for="people-input">Number of People</label>
+        <div tabindex="0">
+          <img src="./images/icon-person.svg" alt="">
+          <input type="text" placeholder="0" id="people-input" name="people-input" required>
+        </div>
+        <span class="error-message" id="error-people"></span>
+      </form>
+    </section>
+    <section class="tip-result">
+      <div>
+        <h3>
+          Tip Amount
+        </h3>
+        <span>/ person</span>
+      </div>
+      <div class="price"><span>$</span><span id="tip">0</span></div>
+      <div>
+        <h3>
+          Total
+        </h3>
+        <span>/ person</span>
+      </div>
+      <div class="price"><span>$</span><span id="total">0</span></div>
+      <button type="reset" onclick=resetForm()>Reset</button>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">amiramii</a>.
+  </footer>
+</body>
+</html>

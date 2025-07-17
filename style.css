@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    /*Colors*/
+    --result-btn-Green: hsl(172, 67%, 45%);
+    --tip-result-bg: hsl(183, 100%, 15%);
+    --primary-text-color: hsl(186, 14%, 43%);
+    --bg-color: hsl(185, 41%, 84%);
+    --Grey-400: hsl(184, 14%, 56%) ;
+    --Grey-50: hsl(189, 47%, 97%);
+    --bg-container: hsl(0, 100%, 100%);
+    --red-error:rgb(202, 49, 38);
+    /*Font Sizes/weight*/
+    --fs: 24px;
+    --fw-700:700;
+    /*Spacings*/
+    --spacing-0: 0;
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
+}
+body{
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Mono',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: var(--fw-700);
+    font-size: var(--fs);
+    min-height: 100vh;
+    align-items: center;
+    justify-items: center;
+    color: var(--primary-text-color);
+}
+header{
+    padding: var(--spacing-400);
+}
+.container{
+    width: 100%;
+    padding: var(--spacing-400);
+    background-color: var(--bg-container);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem 1.5rem 0 0;
+    min-height:calc(100vh - 8rem);
+    gap: var(--spacing-400);
+}
+.tip-calculator{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+.tip-result{
+    background-color: var(--tip-result-bg);
+    border-radius: var(--spacing-200);
+    width: 100%;
+    height: auto;
+    padding: var(--spacing-400);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: var(--spacing-300);
+    place-content: center;
+}
+.tip-result button{
+    grid-column: auto/ span 2;
+}
+h3{
+    font-size: var(--spacing-300);
+    color: var(--bg-container);
+}
+.tip-result span{
+    font-size: var(--spacing-200);
+    color: var(--Grey-400);
+}
+button{
+    cursor: pointer;
+    background-color: var(--tip-result-bg);
+    border: none;
+    font-family: 'Space Mono',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: var(--fw-700);
+    font-size: var(--fs);
+    border-radius:0.3rem;
+    padding: 0.3rem 0;
+
+}
+button:hover{
+    background-color: var(--result-btn-Green);
+    color: var(--tip-result-bg);
+    filter: brightness(100%);
+}
+.tip-result button{
+    filter: brightness(140%);
+    color:rgba(39, 39, 39, 0.473);
+    text-transform: uppercase;
+}
+.price{
+    color: var(--result-btn-Green);
+    font-size: var(--spacing-500);
+    place-self: end;
+}
+.price span{
+    color: var(--result-btn-Green) !important;
+    font-size: var(--spacing-400) !important;
+}
+.container .tips{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-200);
+    
+}
+.flex-item{
+    color: var(--bg-container);
+    padding: 0.2rem ;
+    width: 45%;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    position: relative;
+}
+form div img{
+    width:1rem;  
+    height: auto;
+    margin-inline-start:var(--spacing-200) ;
+    aspect-ratio: 1/1;
+    justify-self: center;
+    align-self: center;
+
+}
+form div{
+    width: 100%;
+    background-color: var(--Grey-50);
+    border-radius:0.3rem;
+    display: flex;
+    position: relative;
+}
+input{
+    background-color: var(--Grey-50);
+    border: none;
+    cursor:pointer;
+    font-family: 'Space Mono',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: var(--fw-700);
+    font-size: var(--fs);
+}
+form div input{
+    text-align: end;
+    padding: var(--spacing-100);
+    width: 90%;
+    outline: none;
+}
+form div input::placeholder{
+    color: var(--Grey-400);
+}
+form div:hover,
+.custom-tip:hover,
+.custom-tip:focus,
+form div:focus{
+    outline: none;
+    border: 2px solid var(--result-btn-Green);
+}
+.custom-tip::placeholder{
+    color: var(--tip-result-bg);
+    opacity: 70%;
+}
+.custom-tip{
+    text-align: center;
+    color: var(--tip-result-bg);
+}
+.container span,
+label{
+    font-size: var(--spacing-200);
+}
+button:hover,
+button:focus{
+    outline: none;
+    background-color: var(--result-btn-Green);
+    color: var(--tip-result-bg);
+    filter: brightness(100%);
+}
+.error-message{
+    font-size: 0.8rem !important;
+    position: absolute;
+    color: var(--red-error);
+    right: 0;
+    top: 8%;
+    
+}
+.error{
+    outline: 2px solid var(--red-error);
+}
+@media screen and (min-width:64rem) {
+    header{
+        margin: auto;
+        padding-top: var(--spacing-500);
+        padding-bottom: 0;
+        justify-self: end;
+    }
+    .container{
+        margin: auto;
+        width: 70%;
+        flex-direction: row;
+        border-radius: 1.5rem ;
+        min-height:max-content;
+    }
+    .tip-calculator{
+        width: max-content;
+        flex: 1;
+        row-gap: 4rem;
+    }
+    .tip-result{
+        flex: 1;
+        padding: var(--spacing-500);
+        row-gap: var(--spacing-500);
+        place-content: start;
+
+    }
+    
+    .tip-result button{
+        margin-block-start: 30%;
+    }
+    .flex-item{
+        width: 30%;
+    }
+    form div{
+        width: 94%;
+    }
+    button:hover,
+    button:focus{
+        filter:grayscale(40%);
+    }
+    .container span{
+        margin-block-end: -3rem;
+    }
+    #people-number-from{
+        margin-block-start: 3.2rem;
+    }
+}
