@@ -100,6 +100,12 @@ button:hover{
     color:rgba(39, 39, 39, 0.473);
     text-transform: uppercase;
 }
+.active{
+    background-color: var(--result-btn-Green);
+    filter: brightness(140%);
+    color:rgba(39, 39, 39, 0.473);
+    text-transform: uppercase;
+}
 .price{
     color: var(--result-btn-Green);
     font-size: var(--spacing-500);
@@ -238,6 +244,13 @@ button:focus{
     button:hover,
     button:focus{
         filter:grayscale(40%);
+    }
+    .active{
+        background-color: var(--result-btn-Green);
+        filter: brightness(100%) !important;
+        filter:grayscale(40%);
+        color:rgba(39, 39, 39, 0.473);
+        text-transform: uppercase;
     }
     .container span{
         margin-block-end: -3rem;

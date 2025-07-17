@@ -4,6 +4,7 @@ const resetForm=()=>{
     document.querySelector('.custom-tip').value="";//input tag
     document.getElementById("tip").innerText="0";
     document.getElementById("total").innerText="0";
+    document.getElementById("reset-btn").classList.remove("active");
 }
 function setError(message,target,outline){
     target.innerText=message;
@@ -61,6 +62,7 @@ tipButton.forEach(button=>{
         if( isBillValid && isPeopleVaid){
             let tipAmount=calculateTipAmount(billInput,tipButtonValue,peopleInput);
             calculateTotal(billInput,tipAmount,peopleInput);
+            document.getElementById("reset-btn").classList.add("active");
         }
     
     
@@ -74,6 +76,7 @@ document.querySelector(".custom-tip").addEventListener('input',(e)=>{
     if(isDataValid("bill",billInput,validations) && (isDataValid("people",peopleInput,validations))){
         let tipAmount=calculateTipAmount(billInput,tipButtonValue,peopleInput);
         calculateTotal(billInput,tipAmount,peopleInput);
+        document.getElementById("reset-btn").classList.add("active");
     }
 
 
